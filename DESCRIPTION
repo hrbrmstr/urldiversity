@@ -1,0 +1,30 @@
+Package: urldiversity
+Type: Package
+Title: Quantify 'URL' Diversity and Apply Popular Biodiversity Indices to a 'URL' Collection
+Version: 0.1.0
+Date: 2018-05-04
+Authors@R: c(
+    person("Bob", "Rudis", email = "bob@rud.is", role = c("aut", "cre"), 
+           comment = c(ORCID = "0000-0001-5670-2640")),
+    person("Alexander", "Nwala", email = "anwala@cs.odu.edu", role = c("aut"), 
+           comment = c(ORCID = "0000-0001-5670-2640"))
+  )
+Maintainer: Bob Rudis <bob@rud.is>
+Description: Methods are provided to compute the 'WSDL Diversity Index' <http://ws-dl.blogspot.com/2018/05/2018-05-04-exploration-of-url-diversity.html> 
+   along with selected biodiversity indidces to a corpus (collection) of 'URLs'.
+URL: https://github.com/hrbrmstr/urldiversity
+BugReports: https://github.com/hrbrmstr/urldiversity/issues
+Encoding: UTF-8
+License: AGPL
+Suggests:
+    testthat,
+    covr
+Depends:
+    R (>= 3.2.0)
+Imports:
+    purrr,
+    dplyr,
+    xml2,
+    utils,
+    urltools
+RoxygenNote: 6.0.1.9000

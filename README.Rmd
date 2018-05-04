@@ -1,0 +1,65 @@
+---
+output: rmarkdown::github_document
+---
+
+# urldiversity
+
+Quantify 'URL' Diversity and Apply Popular Biodiversity Indices to a 'URL' Collection
+
+## Description
+
+Methods are provided to compute the 'WSDL Diversity Index' <http://ws-dl.blogspot.com/2018/05/2018-05-04-exploration-of-url-diversity.html> 
+along with selected biodiversity indidces to a corpus (collection) of 'URLs'.
+
+## NOTE
+
+All credit goes to [Alexander Nwala](http://www.cs.odu.edu/~anwala/) for the algorithm research and [original Python implementation](https://github.com/anwala/url-diversity).
+   
+## TODO
+
+- [ ] Handle some edge cases
+- [ ] Tests
+- [ ] Better documentation
+- [ ] Vignette with many citations from the WSDL blog post
+
+## What's Inside The Tin
+
+The following functions are implemented:
+
+- `uri_diversity`:	Quantify URL diversity
+
+## Installation
+
+```{r eval=FALSE}
+devtools::install_github("hrbrmstr/urldiversity")
+```
+
+```{r message=FALSE, warning=FALSE, error=FALSE, include=FALSE}
+options(width=120)
+```
+
+## Usage
+
+```{r message=FALSE, warning=FALSE, error=FALSE}
+library(urldiversity)
+
+# current verison
+packageVersion("urldiversity")
+
+```
+
+```{r}
+collection <- readLines(system.file("extdat", "corpus.txt", package = "urldiversity"))
+
+print(collection)
+
+x <- uri_diversity(collection)
+
+dplyr::glimpse(x)
+
+x
+```
+
+## Code of Conduct
+
+Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
