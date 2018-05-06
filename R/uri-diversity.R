@@ -74,7 +74,7 @@ uri_diversity <- function(corpus, exception_domains = NULL) {
 
   ) -> out
 
-  class(out) <- c("uri_diversity")
+  class(out) <- c("uri_diversity", "tbl_df", "tbl", "data.frame")
 
   out
 
