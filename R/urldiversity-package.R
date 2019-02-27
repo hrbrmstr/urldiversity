@@ -7,10 +7,12 @@
 #' @name urldiversity
 #' @docType package
 #' @author Alexander Nwala (anwala@@cs.odu.edu); Bob Rudis (bob@@rud.is)
-#' @importFrom purrr pmap %>%
+#' @importFrom purrr pmap %>% safely
+#' @import httr
 #' @importFrom urltools suffix_extract
-#' @importFrom dplyr count data_frame mutate summarise bind_cols
+#' @importFrom dplyr count data_frame mutate summarise bind_cols n
 #' @importFrom xml2 url_parse
+#' @importFrom rvest html_nodes html_text html_attr
 #' @importFrom utils globalVariables
 #' @references <http://ws-dl.blogspot.com/2018/05/2018-05-04-exploration-of-url-diversity.html>
 NULL

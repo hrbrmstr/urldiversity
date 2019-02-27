@@ -5,6 +5,8 @@
 #'
 #' @md
 #' @param corpus a collection (character vector) of URLs
+#' @param corpus_id an identifier (ideally unique) for the collection; will
+#'        be generated if not provided.
 #' @param exception_domains a character vector of domains; use this to specify domains
 #'     where the query string is important. Normally, the query string is excluded from
 #'     the canonicalized URI but in some cases (e.g. `youtube.com`) it is desirable
@@ -18,7 +20,7 @@
 #' @examples
 #' collection <- readLines(system.file("extdat", "corpus.txt", package = "urldiversity"))
 #' uri_diversity(collection)
-uri_diversity <- function(corpus, exception_domains = NULL) {
+uri_diversity <- function(corpus, corpus_id = uuid::UUIDgenerate(), exception_domains = NULL) {
 
   xml2::url_parse(corpus) %>%
     dplyr::bind_cols(urltools::suffix_extract(.$server)) %>%
@@ -74,9 +76,14 @@ uri_diversity <- function(corpus, exception_domains = NULL) {
 
   ) -> out
 
+  out$corpus_id <- corpus_id
+
   class(out) <- c("uri_diversity", "tbl_df", "tbl", "data.frame")
 
   out
 
 }
 
+#' @rdname uri_diversity
+#' @export
+url_diversity <- uri_diversity

@@ -26,7 +26,21 @@ All credit goes to [Alexander Nwala](http://www.cs.odu.edu/~anwala/) for the alg
 
 The following functions are implemented:
 
+### Core function:
+
 - `uri_diversity`:	Quantify URL diversity
+- `url_diversity`:	(an alias for ^^ b/c I regularly forget it's rightlfully `uri`)
+
+### Processing Helpers:
+
+- `clean_index_factors`:	Clean up diversity and evenness names
+
+### Scraping Helpers:
+
+- `body_anchor_urls`:	Extract all body anchor hypertext references
+- `body_img_urls`:	Extract all body image URLs
+- `safeGET`:	Safer version of 'httr::GET()'
+- `safePOST`:	Safer version of 'httr::POST()'
 
 ## Installation
 

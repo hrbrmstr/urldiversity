@@ -2,12 +2,20 @@
 % Please edit documentation in R/uri-diversity.R
 \name{uri_diversity}
 \alias{uri_diversity}
+\alias{url_diversity}
 \title{Quantify URL diversity}
 \usage{
-uri_diversity(corpus, exception_domains = NULL)
+uri_diversity(corpus, corpus_id = uuid::UUIDgenerate(),
+  exception_domains = NULL)
+
+url_diversity(corpus, corpus_id = uuid::UUIDgenerate(),
+  exception_domains = NULL)
 }
 \arguments{
 \item{corpus}{a collection (character vector) of URLs}
+
+\item{corpus_id}{an identifier (ideally unique) for the collection; will
+be generated if not provided.}
 
 \item{exception_domains}{a character vector of domains; use this to specify domains
 where the query string is important. Normally, the query string is excluded from
